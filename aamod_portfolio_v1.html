@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aamod Paudel – Portfolio</title>
+    <meta
+      name="description"
+      content="Aamod Paudel – Data Analyst & Educator. Python, SQL, Power BI, Tableau. Turning messy data into clear decisions."
+    />
+    <meta name="theme-color" content="#0ea5e9" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0b0f14; /* dark slate */
+        --bg-2: #0f1720;
+        --text: #e5eef7; /* near white */
+        --muted: #a9b6c6;
+        --card: #0f141b;
+        --border: #1f2a37;
+        --accent-start: #2dd4bf; /* teal */
+        --accent-end: #60a5fa; /* blue */
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        --radius: 16px;
+        --maxw: 1080px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(
+          180deg,
+          #0b0f14 0%,
+          #0b0f14 40%,
+          #0e1520 100%
+        );
+        color: var(--text);
+      }
+      a {
+        color: inherit;
+      }
+      .project-meta {
+        font-size: 0.85rem;
+        color: var(--muted);
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin: 0.5rem 0 0.75rem;
+      }
+
+      .project-meta span::before {
+        content: "•";
+        margin-right: 0.5rem;
+        color: var(--accent);
+      }
+
+      .project h3 {
+        margin-bottom: 0.1rem;
+      }
+      .container {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .gradient-text {
+        background: linear-gradient(
+          90deg,
+          var(--accent-start),
+          var(--accent-end)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--border);
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #0f1622;
+      }
+
+      /* Navbar */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(11, 15, 20, 0.7);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .card.project {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Push buttons to bottom */
+      .card.project .actions {
+        margin-top: auto;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .brand {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-weight: 700;
+      }
+      .brand-logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--accent-start),
+          var(--accent-end)
+        );
+        display: grid;
+        place-items: center;
+        color: #0b0f14;
+        font-weight: 800;
+      }
+      .nav ul {
+        display: flex;
+        gap: 14px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav a {
+        display: inline-block;
+        padding: 8px 10px;
+        border-radius: 10px;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid transparent;
+      }
+      .nav a:hover,
+      .nav a.active {
+        border-color: var(--border);
+        color: var(--text);
+      }
+      .burger {
+        display: none;
+        background: none;
+        border: 0;
+        color: var(--text);
+        font-size: 22px;
+      }
+
+      /* Sections */
+      section {
+        padding: 64px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      section:last-of-type {
+        border-bottom: none;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 16px 0 16px;
+      }
+      h1 {
+        font-size: clamp(28px, 5vw, 42px);
+        line-height: 1.1;
+      }
+      h2 {
+        font-size: clamp(22px, 4vw, 28px);
+        letter-spacing: 0.3px;
+      }
+      h3 {
+        font-size: 18px;
+        color: var(--text);
+      }
+      p {
+        color: #c8d6e5;
+        line-height: 1.7;
+      }
+
+      /* Hero */
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 32px;
+        align-items: center;
+      }
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--accent-start),
+          var(--accent-end)
+        );
+        padding: 3px;
+        box-shadow: var(--shadow);
+      }
+      .avatar-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #0b0f14;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        font-size: 36px;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: #0f1622;
+        color: var(--text);
+        text-decoration: none;
+      }
+      .btn:hover {
+        border-color: #2a3a4d;
+      }
+      .btn.primary {
+        background: linear-gradient(
+          90deg,
+          var(--accent-start),
+          var(--accent-end)
+        );
+        color: #0b0f14;
+        font-weight: 700;
+        border: 0;
+      }
+
+      /* Cards / grids */
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+      .grid.cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid.cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, #0f141b 0%, #0d131b 100%);
+        padding: 18px;
+      }
+      .subtle {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .list {
+        margin: 0;
+        padding-left: 18px;
+      }
+      .list li {
+        margin: 6px 0;
+      }
+
+      /* Experience block */
+      details {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: #0f141b;
+      }
+      summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+      }
+      .summary-why p {
+        margin: 0 0 0.6rem;
+      }
+
+      .summary-why p:last-child {
+        margin-bottom: 0;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      details[open] summary {
+        border-bottom: 1px solid var(--border);
+      }
+      .exp-body {
+        padding: 14px 16px;
+      }
+      .exp-meta {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 4px;
+      }
+
+      /* Projects */
+      .project {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      /* Footer */
+      footer {
+        padding: 42px 0;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .grid.cols-3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .grid.cols-2,
+        .grid.cols-3 {
+          grid-template-columns: 1fr;
+        }
+        .nav ul {
+          display: none;
+          position: absolute;
+          top: 64px;
+          right: 12px;
+          background: #0f141b;
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          padding: 10px;
+          width: 88vw;
+          max-width: 420px;
+        }
+        .nav ul.show {
+          display: block;
+        }
+        .burger {
+          display: block;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aamod Paudel",
+        "jobTitle": "Data Analyst",
+        "email": "mailto:paudelaamod@gmail.com",
+        "url": "https://your-domain.example",
+        "sameAs": [
+          "https://www.linkedin.com/in/aamodpaud3l",
+          "https://github.com/AamodPaud3l",
+          "https://github.com/APaud3l"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-logo">AP</div>
+          <div><span class="gradient-text">Aamod</span> Paudel</div>
+        </div>
+        <button
+          class="burger"
+          aria-label="Toggle navigation"
+          onclick="document.querySelector('.nav ul').classList.toggle('show')"
+        >
+          ☰
+        </button>
+        <ul>
+          <li><a href="#summary" class="active">Summary</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certs">Certifications</a></li>
+          <li><a href="#interests">Interests</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <!-- Hero -->
+      <section id="home" aria-labelledby="home-title" style="padding-top: 42px">
+        <div class="hero">
+          <div>
+            <h1 id="home-title">
+              Data Analyst
+              <span class="gradient-text">turning data into decisions</span>
+            </h1>
+            <p class="subtle">Python • SQL • Power BI / Tableau • Git • AWS</p>
+            <div class="actions">
+              <a class="btn primary" href="#contact">Get in touch</a>
+              <a class="btn" href="#projects">View projects</a>
+              <a
+                class="btn"
+                href="https://www.linkedin.com/in/aamodpaud3l"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+              <a
+                class="btn"
+                href="https://github.com/AamodPaud3l"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center">
+            <!-- Avatar: replace src with /assets/profile.jpg if you want your photo -->
+            <div class="avatar" aria-hidden="true">
+              <div class="avatar-inner">AP</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section id="summary" aria-labelledby="summary-title">
+        <h2 id="summary-title" class="gradient-text">
+          Summary / Career Highlights
+        </h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <ul class="list">
+              <li>
+                Data analyst with a Master’s in Information Technology (Data
+                Analytics), experienced across health, education, and technology
+                environments.
+              </li>
+
+              <li>
+                Improved operational data accuracy by
+                <strong>30%</strong> through structured validation, stocktake
+                analysis, and root-cause investigation in a health services
+                setting.
+              </li>
+
+              <li>
+                Worked end-to-end across analytics workflows: understanding the
+                problem, validating data sources, cleaning and analysing
+                datasets, and presenting insights in dashboards and reports.
+              </li>
+
+              <li>
+                Delivered applied analytics work in project-based environments
+                using real-world datasets; reviewing analytical outputs,
+                refining methodologies, and guiding stakeholders through
+                insights, similar to internal analytics teams.
+              </li>
+
+              <li>
+                Hands-on with Python, SQL, Power BI, Tableau, AWS, and Excel,
+                applying exploratory analysis, regression, and clustering to
+                support reporting and decision-making.
+              </li>
+            </ul>
+          </div>
+          <div class="card summary-why">
+            <p>
+              My why: I enjoy working with messy, real-world data and turning it
+              into insights people can actually use.
+            </p>
+            <p>
+              I’m particularly interested in analytics work that supports
+              reporting, operational decisions, and stakeholder-facing insights,
+              especially where data quality is unclear or reporting needs
+              improvement.
+            </p>
+            <p>
+              From validating and analysing data to building dashboards and
+              explaining results, my focus is on making data easier to
+              understand so better decisions can be made with confidence.
+            </p>
+            <p class="subtle">
+              Examples of my work, including dashboards, analyses, and case
+              studies, are shared below.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="gradient-text">Skills</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Core</h3>
+            <ul class="list">
+              <li>Python (Pandas, NumPy)</li>
+              <li>SQL</li>
+              <li>Power BI, Tableau</li>
+              <li>Data Wrangling & Exploratory Data Analysis (EDA)</li>
+              <li>Dashboarding & Reporting</li>
+              <li>Stakeholder Communication</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Applied</h3>
+            <ul class="list">
+              <li>
+                Statistical Modelling (Regression, Classification, Clustering)
+              </li>
+              <li>AWS (S3, Lambda, IAM basics, cost analysis)</li>
+              <li>Jupyter / Notebooks</li>
+              <li>Git / GitHub</li>
+              <li>Excel</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Supporting</h3>
+            <ul class="list">
+              <li>JavaScript and automation</li>
+              <li>Web & data applications (Flask, Laravel)</li>
+              <li>Full-stack exposure (React, Node, Express, MongoDB)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title" class="gradient-text">Work Experience</h2>
+
+        <details open>
+          <summary>
+            Coder Academy, Australia — Data Analyst (Applied Analytics Projects)
+            <span class="subtle">(May 2024 – Present)</span>
+          </summary>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="pill">About: Australian coding bootcamp</span>
+              <span class="pill">Location: AU</span>
+            </div>
+            <h3>Responsibilities</h3>
+            <ul class="list">
+              <li>
+                Collected, cleaned, and validated structured and unstructured
+                datasets using Python (Pandas) and SQL, producing reliable
+                datasets for applied analysis and insight generation.
+              </li>
+
+              <li>
+                Performed exploratory data analysis and statistical techniques
+                to identify trends, patterns, and anomalies across real-world
+                datasets.
+              </li>
+
+              <li>
+                Applied predictive and analytical methods (e.g. regression,
+                clustering) to demonstrate data-driven use cases and support
+                analytical conclusions.
+              </li>
+
+              <li>
+                Developed dashboards and analytical reports using Power BI,
+                Tableau, and Python visualisations to communicate insights in a
+                clear, stakeholder-friendly format.
+              </li>
+
+              <li>
+                Supported cloud-based data access and delivery by working with
+                AWS services (S3, Lambda, IAM) within analytics and deployment
+                workflows.
+              </li>
+
+              <li>
+                Translated technical findings into clear, actionable
+                recommendations for non-technical stakeholders, supporting
+                informed decision-making.
+              </li>
+
+              <li>
+                Documented assumptions, methodologies, and outputs to ensure
+                data integrity, transparency, and repeatability across analytics
+                projects.
+              </li>
+            </ul>
+
+            <h3>Key Contributions</h3>
+            <ul class="list">
+              <li>
+                Introduced analytics-first project structures and exercises,
+                improving clarity of analytical outputs and alignment with
+                real-world reporting expectations.
+              </li>
+
+              <li>
+                Standardised starter templates and data workflows, reducing
+                setup time and enabling faster iteration during analytics
+                projects.
+              </li>
+
+              <li>
+                Reviewed and refined analytical outputs across projects,
+                improving consistency, methodological soundness, and
+                interpretability of results.
+              </li>
+            </ul>
+
+            <h3>Tech landscape</h3>
+            <div class="stack">
+              <span class="pill">Python</span>
+              <span class="pill">SQL</span>
+              <span class="pill">Power BI / Tableau</span>
+              <span class="pill">AWS (S3, Lambda, IAM)</span>
+              <span class="pill">GitHub</span>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Choice Academic College, Sydney — Trainer & Assessor
+            <span class="subtle">(Sep 2022 – Present)</span>
+          </summary>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="pill">About: Private VET education provider</span>
+              <span class="pill">Location: Sydney</span>
+            </div>
+            <h3>Responsibilities</h3>
+            <ul class="list">
+              <li>
+                Delivered training in Diploma-level Information Technology
+                subjects, covering Excel, SQL, Python, HTML/CSS, and core
+                programming and data concepts.
+              </li>
+
+              <li>
+                Taught students how to work with data using spreadsheets,
+                databases, and basic scripts, focusing on correct usage,
+                structure, and interpretation.
+              </li>
+
+              <li>
+                Guided learners through practical exercises involving data
+                manipulation, querying, and simple analysis using real or
+                realistic datasets.
+              </li>
+
+              <li>
+                Explained technical and data-related concepts in a clear,
+                structured way to learners with varied technical backgrounds.
+              </li>
+            </ul>
+
+            <h3>Key Contributions</h3>
+            <ul class="list">
+              <li>
+                Developed and delivered lesson content aligned with VET Diploma
+                of IT units, ensuring students met required learning outcomes.
+              </li>
+
+              <li>
+                Created practical exercises and assessment activities focused on
+                applying technical skills using Excel, SQL, and Python.
+              </li>
+            </ul>
+
+            <h3>Tech landscape</h3>
+            <div class="stack">
+              <span class="pill">Excel</span>
+              <span class="pill">SQL</span>
+              <span class="pill">Python</span>
+              <span class="pill">HTML / CSS</span>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            HealthShare NSW, Sydney — Support Officer
+            <span class="subtle">(May 2023 – Jun 2024)</span>
+          </summary>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="pill">About: NSW Health shared services</span>
+              <span class="pill">Location: Sydney</span>
+            </div>
+            <h3>Responsibilities</h3>
+            <ul class="list">
+              <li>
+                Supported stock and operational data validation processes,
+                improving the accuracy of data used by team leads for reporting
+                and planning.
+              </li>
+
+              <li>
+                Assisted team leads with structured data collection, ensuring
+                information was captured consistently and in line with
+                organisational standards.
+              </li>
+
+              <li>
+                Reviewed and cleaned operational datasets to resolve
+                inconsistencies prior to reporting.
+              </li>
+            </ul>
+
+            <h3>Key Contributions</h3>
+            <ul class="list">
+              <li>
+                Improved reporting turnaround time by approximately
+                <strong>20%</strong> through cleaner data handling and
+                validation processes.
+              </li>
+
+              <li>
+                Reduced recurring data quality issues by ensuring data
+                collection complied with internal governance and compliance
+                requirements.
+              </li>
+            </ul>
+
+            <h3>Tech landscape</h3>
+            <div class="stack">
+              <span class="pill">Excel (data entry & validation)</span>
+              <span class="pill"
+                >Exposure to dashboards & reporting outputs</span
+              >
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Snooze, Sydney — Sales Consultant
+            <span class="subtle">(Sep 2022 – Jan 2025)</span>
+          </summary>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="pill">About: Retail bedding & furniture</span>
+              <span class="pill">Location: Sydney</span>
+            </div>
+            <h3>Responsibilities</h3>
+            <ul class="list">
+              <li>
+                Engaged with customers to understand needs, recommend products,
+                and manage the sales process from enquiry to post-sale support.
+              </li>
+
+              <li>
+                Used sales data, product performance trends, and customer
+                feedback to inform recommendations and improve conversion
+                outcomes.
+              </li>
+            </ul>
+
+            <h3>Key Contributions</h3>
+            <ul class="list">
+              <li>
+                Consistently exceeded sales targets by approximately
+                <strong>25%</strong> through effective customer engagement and
+                informed product recommendations.
+              </li>
+
+              <li>
+                Awarded <strong>Gold Sales Award (2023)</strong> for sustained
+                high performance.
+              </li>
+            </ul>
+
+            <h3>Tech landscape</h3>
+            <div class="stack">
+              <span class="pill">POS / CRM systems</span>
+              <span class="pill">Excel (basic reporting)</span>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Inctic Labs, Nepal — Junior Data Scientist
+            <span class="subtle">(Oct 2021 – May 2022)</span>
+          </summary>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="pill">About: Product & app development</span>
+              <span class="pill">Location: Nepal</span>
+            </div>
+            <h3>Responsibilities</h3>
+            <ul class="list">
+              <li>
+                Analysed consumer application data using Python and Jupyter
+                Notebooks to identify user behaviour patterns and usage trends.
+              </li>
+
+              <li>
+                Performed exploratory data analysis and assisted with predictive
+                analysis under guidance to support feature development and
+                product decisions.
+              </li>
+
+              <li>
+                Cleaned, prepared, and structured datasets to ensure reliability
+                and consistency for downstream analysis.
+              </li>
+
+              <li>
+                Supported AWS usage and cost analysis activities, helping
+                improve visibility into cloud resource consumption.
+              </li>
+
+              <li>
+                Communicated analytical findings and observations to the team,
+                contributing to data-informed discussions around product
+                improvements.
+              </li>
+            </ul>
+
+            <h3>Key Contributions</h3>
+            <ul class="list">
+              <li>
+                Identified behavioural patterns in user data that informed
+                feature exploration, with one proposed feature adopted for
+                implementation.
+              </li>
+
+              <li>
+                Improved data readiness for analysis by standardising data
+                cleaning and preparation steps across datasets.
+              </li>
+
+              <li>
+                Contributed to improved cost awareness by supporting AWS usage
+                and billing analysis.
+              </li>
+            </ul>
+
+            <h3>Tech landscape</h3>
+            <div class="stack">
+              <span class="pill">Python</span>
+              <span class="pill">Jupyter Notebooks</span>
+              <span class="pill">Pandas</span>
+              <span class="pill">AWS (usage & cost analysis)</span>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            CloudyFox Technologies, Nepal — Data Science Intern
+            <span class="subtle">(Aug 2021 – Oct 2021)</span>
+          </summary>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="pill">About: Software & cloud consulting</span>
+              <span class="pill">Location: Nepal</span>
+            </div>
+            <h3>Responsibilities</h3>
+            <ul class="list">
+              <li>
+                Analysed AWS usage and billing datasets using Python to identify
+                usage patterns and cost distribution trends.
+              </li>
+
+              <li>
+                Performed basic data preparation and exploratory analysis to
+                support internal analytics and discussion.
+              </li>
+
+              <li>
+                Assisted with visualising findings to help communicate insights
+                around cloud usage and costs.
+              </li>
+            </ul>
+            <h3>Key Contributions</h3>
+            <ul class="list">
+              <li>
+                Contributed analytical summaries highlighting cloud usage
+                patterns and potential cost optimisation opportunities.
+              </li>
+            </ul>
+
+            <h3>Tech landscape</h3>
+            <div class="stack">
+              <span class="pill">Python</span>
+              <span class="pill">Pandas</span>
+              <span class="pill">AWS (usage & billing data)</span>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Kazi Studios, Nepal — Laravel Developer
+            <span class="subtle">(Mar 2021 – May 2021)</span>
+          </summary>
+          <div class="exp-body">
+            <h3>Responsibilities</h3>
+            <ul class="list">
+              <li>
+                Contributed to the development and enhancement of dynamic
+                website features using Laravel and PHP.
+              </li>
+
+              <li>
+                Worked with relational databases to support data storage and
+                retrieval for web applications.
+              </li>
+
+              <li>
+                Assisted with maintaining and improving internal systems and
+                application functionality.
+              </li>
+            </ul>
+
+            <h3>Tech landscape</h3>
+            <div class="stack">
+              <span class="pill">PHP</span><span class="pill">Laravel</span
+              ><span class="pill">MySQL</span>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Nepal Rastra Bank — Web Developer Intern
+            <span class="subtle">(Dec 2020 – Feb 2021)</span>
+          </summary>
+          <div class="exp-body">
+            <h3>Responsibilities</h3>
+            <ul class="list">
+              <li>
+                Assisted with the development and maintenance of internal and
+                public-facing government websites.
+              </li>
+
+              <li>
+                Built basic CRUD functionality to support structured data
+                management within web applications.
+              </li>
+
+              <li>
+                Worked with backend data storage to ensure information was
+                correctly stored and retrieved.
+              </li>
+            </ul>
+
+            <h3>Tech landscape</h3>
+            <div class="stack">
+              <span class="pill">PHP</span><span class="pill">MySQL</span
+              ><span class="pill">JavaScript</span>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="gradient-text">Projects</h2>
+        <div class="grid cols-3">
+          <!-- <div class="card project">
+            <h3>Recycling Trends Dashboard</h3>
+
+            <ul class="project-points">
+              <li>
+                <strong>Problem:</strong> Limited visibility into recycling
+                volumes and suburb-level performance.
+              </li>
+              <li>
+                <strong>Approach:</strong> Cleaned and queried datasets using
+                SQL and built an interactive Power BI dashboard.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Highlighted underperforming suburbs
+                and seasonal trends to support planning decisions.
+              </li>
+            </ul>
+
+            <div class="stack">
+              <span class="pill">Power BI</span>
+              <span class="pill">SQL</span>
+            </div>
+
+            <div class="actions">
+              <a class="btn" href="#" aria-label="View demo">Demo</a>
+              <a class="btn" href="#" aria-label="View GitHub repository"
+                >GitHub</a
+              >
+            </div>
+          </div> -->
+
+          <div class="card project">
+            <h3>COVID-19 Impact on Health Insurance Share Prices</h3>
+
+            <ul class="project-points">
+              <li>
+                <strong>Problem:</strong> Compare share price behaviour before
+                vs during COVID across health insurers.
+              </li>
+              <li>
+                <strong>Approach:</strong> Built interactive Tableau dashboards
+                to explore time-series patterns.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Visualised volatility and recovery
+                trends for quick comparison.
+              </li>
+            </ul>
+
+            <div class="project-meta">
+              <span>Tableau</span>
+              <span>Time Series</span><span>Dashboarding</span>
+            </div>
+
+            <div class="actions">
+              <a
+                class="btn"
+                href="https://public.tableau.com/views/ImpactonSharePricesofHealthInsuranceCompaniesduetoCovid-19/q7_3?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                target="_blank"
+                rel="noopener"
+                >Tableau Public</a
+              >
+            </div>
+          </div>
+
+          <div class="card project">
+            <h3>Kalimati Market Analysis (Commodity + Weather)</h3>
+
+            <ul class="project-points">
+              <li>
+                <strong>Problem:</strong> Explore how commodity price patterns
+                behave over time and with weather context.
+              </li>
+              <li>
+                <strong>Approach:</strong> Joined scraped/cleaned commodity data
+                with Kathmandu weather data and performed EDA with multiple
+                visual views.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Built a reusable notebook for trend
+                exploration and relationship checking.
+              </li>
+            </ul>
+
+            <div class="project-meta">
+              <span>Python</span><span>EDA</span><span>Data Enrichment</span>
+            </div>
+
+            <div class="actions">
+              <a
+                class="btn"
+                href="https://github.com/AamodPaud3l/KalimatiMarketAnalysis"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </div>
+          </div>
+
+          <div class="card project">
+            <h3>Netflix Dataset Analysis</h3>
+
+            <ul class="project-points">
+              <li>
+                <strong>Problem:</strong> Identify content trends and patterns
+                across a streaming catalogue dataset.
+              </li>
+              <li>
+                <strong>Approach:</strong> Performed EDA and built visual
+                exploration in a notebook.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Summarised key distribution trends and
+                insights for quick interpretation.
+              </li>
+            </ul>
+
+            <div class="project-meta">
+              <span>Python</span><span>EDA</span><span>Visualisation</span>
+            </div>
+
+            <div class="actions">
+              <a
+                class="btn"
+                href="https://github.com/AamodPaud3l/NetflixDatasetAnalysis"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </div>
+          </div>
+
+          <div class="card project">
+            <h3>XC3 — Cloud Cost Control & Alerting</h3>
+
+            <ul class="project-points">
+              <li>
+                <strong>Problem:</strong> Improve visibility and control of
+                cloud resources, compliance, and cost drivers.
+              </li>
+              <li>
+                <strong>Approach:</strong> Implemented policy-driven automation
+                (Cloud Custodian), reporting, and monitoring/alerting workflows.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Centralised visibility + automated
+                actions for cost and governance use cases.
+              </li>
+            </ul>
+
+            <div class="project-meta">
+              <span>Cloud Custodian</span><span>Terraform</span><span>AWS</span
+              ><span>Monitoring</span>
+            </div>
+
+            <div class="actions">
+              <a
+                class="btn"
+                href="https://github.com/AamodPaud3l/Team1_Alert"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </div>
+          </div>
+
+          <div class="card project">
+            <h3>Contraceptive Method Choice (UCI)</h3>
+
+            <ul class="project-points">
+              <li>
+                <strong>Problem:</strong> Understand which demographic factors
+                relate to contraceptive method choices.
+              </li>
+              <li>
+                <strong>Approach:</strong> Cleaned the dataset and ran
+                analysis/modelling experiments in Python.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Identified key relationships and built
+                a repeatable analysis workflow.
+              </li>
+            </ul>
+
+            <div class="project-meta">
+              <span>Python</span><span>EDA</span><span>ML</span>
+            </div>
+
+            <div class="actions">
+              <a
+                class="btn"
+                href="https://github.com/AamodPaud3l/contraceptive-method-choice"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </div>
+          </div>
+          <div class="card project">
+            <h3>UCI Retail Analysis (RFM + Forecasting)</h3>
+
+            <ul class="project-points">
+              <li>
+                <strong>Problem:</strong> Understand customer behaviour and
+                sales performance from raw transaction data.
+              </li>
+              <li>
+                <strong>Approach:</strong> Cleaned the UCI Online Retail
+                dataset, ran EDA, built RFM segments, and created a sales
+                forecast workflow.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Produced actionable customer segments
+                and a repeatable notebook workflow for analysis.
+              </li>
+            </ul>
+
+            <div class="project-meta">
+              <span>Python</span><span>Pandas</span><span>RFM</span
+              ><span>Forecasting</span>
+            </div>
+
+            <div class="actions">
+              <a
+                class="btn"
+                href="https://github.com/AamodPaud3l/UCI_Retail_Analysis"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" aria-labelledby="education-title">
+        <h2 id="education-title" class="gradient-text">Education</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Master of Information Technology (Data Analytics)</h3>
+            <p class="subtle">Swinburne University of Technology, Australia</p>
+            <ul class="list">
+              <li>
+                Graduated with a GPA of <strong>3.833</strong>, with strong
+                performance in data analytics–focused units.
+              </li>
+              <li>
+                Served as an <strong>Academic Tutor</strong> for Data Science
+                subject, assisting with Python-based data analysis, EDA, and
+                concept clarification.
+              </li>
+              <li>
+                Recipient of the
+                <strong>Swinburne Student Achievement Award</strong> across
+                multiple academic terms.
+              </li>
+              <li>
+                Received a <strong>Certificate of Appreciation</strong> for
+                outstanding open-source contribution to the
+                <strong>X-Grid</strong> project, recognising work on the
+                <strong>XC3</strong> cloud cost control and monitoring solution.
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>B.Sc. in Computer Science & IT</h3>
+            <p class="subtle">Tribhuvan University, Nepal</p>
+            <ul class="list">
+              <li>
+                Completed a broad IT foundation across frontend, backend,
+                testing, and databases, supplemented by additional classes and
+                hands-on projects.
+              </li>
+
+              <li>
+                Actively participated in campus clubs including the
+                <strong>College News Club</strong>,
+                <strong>Sports Club</strong>, and
+                <strong>Documentary Club</strong>, contributing to
+                extracurricular and team-based activities.
+              </li>
+
+              <li>
+                Final year project focused on
+                <strong>Data Science and Machine Learning</strong>, which
+                sparked a strong interest in data-driven problem solving and led
+                to pursuing analytics at postgraduate level.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section id="certs" aria-labelledby="certs-title">
+        <h2 id="certs-title" class="gradient-text">Certifications (by year)</h2>
+        <div class="card">
+          <ul class="list">
+            <li>
+              <strong>2025:</strong>
+              <ul class="list">
+                <li>
+                  <strong
+                    >Microsoft Certified: Power BI Data Analyst
+                    Associate</strong
+                  >
+                  — <em>In progress</em>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>2024:</strong>
+              <ul class="list">
+                <li>
+                  <strong>Introduction to Business Analytics</strong> — LinkedIn
+                  Learning
+                  <a
+                    href="https://www.linkedin.com/learning/certificates/41658de38b3c0c02572edea0c523b45c67c9ceb8d503c395ef5772f32860dc70"
+                    target="_blank"
+                    rel="noopener"
+                    >View certificate</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>2023:</strong>
+              <ul class="list">
+                <li>
+                  <strong>Certificate IV in Training and Assessment</strong> —
+                  Jenard College
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>2020:</strong>
+
+              <ul class="list">
+                <li>
+                  <strong>Image Classification with CNNs using Keras</strong> —
+                  Coursera
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/certificate/HQ9A499K7XTP"
+                    target="_blank"
+                    rel="noopener"
+                    >View certificate</a
+                  >
+                </li>
+
+                <li>
+                  <strong
+                    >Front-End Web UI Frameworks and Tools: Bootstrap 4</strong
+                  >
+                  — Coursera
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/verify/R6ZP5723G5YC"
+                    target="_blank"
+                    rel="noopener"
+                    >View certificate</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Interests -->
+      <section id="interests" aria-labelledby="interests-title">
+        <h2 id="interests-title" class="gradient-text">Hobbies / Interests</h2>
+        <div class="stack">
+          <ul class="list">
+            <li>
+              Curiosity. I like asking questions and understanding how things
+              work, even outside formal projects.
+            </li>
+            <li>
+              Football (soccer), following leagues, teams, and major
+              tournaments.
+            </li>
+            <li>
+              Travelling and experiencing new places, cultures, and
+              perspectives.
+            </li>
+            <li>Trying new foods and cuisines.</li>
+            <li>
+              Listening to podcasts on technology, data, business, and current
+              affairs.
+            </li>
+            <li>
+              Problem-solving and competitive games (adventure, puzzles,
+              multiplayer, chess).
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="gradient-text">Contact</h2>
+        <div class="card">
+          <p>
+            Email:
+            <a href="mailto:paudelaamod@gmail.com">paudelaamod@gmail.com</a>
+          </p>
+          <p>
+            LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/aamodpaud3l"
+              target="_blank"
+              rel="noopener"
+              >/in/aamodpaud3l</a
+            >
+          </p>
+          <p>
+            GitHub:
+            <a
+              href="https://github.com/AamodPaud3l"
+              target="_blank"
+              rel="noopener"
+              >@AamodPaud3l</a
+            >
+          </p>
+          <p>
+            GitHub (Teaching):
+            <a href="https://github.com/APaud3l" target="_blank" rel="noopener"
+              >@APaud3l</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container subtle">
+        © <span id="y"></span> Aamod Paudel • Built with HTML/CSS/JS
+      </div>
+    </footer>
+
+    <script>
+      // Active link highlighting (simple scrollspy)
+      const links = Array.from(
+        document.querySelectorAll('header a[href^="#"]')
+      );
+      const sections = links
+        .map((a) => document.querySelector(a.getAttribute("href")))
+        .filter(Boolean);
+      const onScroll = () => {
+        const pos = window.scrollY + 100;
+        let current = sections[0];
+        sections.forEach((sec) => {
+          if (sec.offsetTop <= pos) current = sec;
+        });
+        links.forEach((a) =>
+          a.classList.toggle(
+            "active",
+            a.getAttribute("href") === "#" + current.id
+          )
+        );
+      };
+      document.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
