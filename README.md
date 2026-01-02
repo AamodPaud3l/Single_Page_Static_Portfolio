@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6a01cd2f-28e5-4bd8-a968-97d338fcda33/deploy-status)](https://app.netlify.com/projects/aamodpaudel/deploys)
+
 # Aamod Paudel — Portfolio Website
 
 Personal portfolio website showcasing my background, experience, and projects in data analytics.
